@@ -1,14 +1,18 @@
 package com.example.marote.marotorch;
 
+import android.app.Activity;
 import android.hardware.Camera;
 import android.hardware.Camera.Parameters;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.view.Menu;
+import android.widget.ToggleButton;
 
 import java.security.Policy;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private Camera camera;
 
@@ -30,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
 
         camera.startPreview();
 
+        ToggleButton button = (ToggleButton) findViewById(R.id.btn_on_off);
+        button.setOnClickListener(this);
+
+
+
+    }
+
+    @Override
+    public void onClick(View view){
 
     }
 
