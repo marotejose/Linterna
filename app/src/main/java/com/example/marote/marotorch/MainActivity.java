@@ -1,13 +1,16 @@
 package com.example.marote.marotorch;
 
-import android.hardware.camera2.CameraDevice;
+import android.hardware.Camera;
+import android.hardware.Camera.Parameters;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Menu;
+
+import java.security.Policy;
 
 public class MainActivity extends AppCompatActivity {
 
-    private CameraDevice mCam;
-
+    private Camera camera;
 
 
 
@@ -18,20 +21,25 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mCam = CameraDevice.
-
         // Encender la linterna
+
+        camera = Camera.open();
+        Parameters parameters = camera.getParameters();
+        parameters.setFlashMode(Parameters.FLASH_MODE_TORCH);
+        camera.setParameters(parameters);
+
+        camera.startPreview();
+
+
     }
 
     @Override
+    public void onBackPressed(){
+        super.onBackPressed();
 
-    public void onBackPressed()
-        {
-            super.onBackPressed();
-
-            //Apagar la Linterna
-
-        }
+        camera.stopPreview();
+        camera.release();
+    }
 
 
 }

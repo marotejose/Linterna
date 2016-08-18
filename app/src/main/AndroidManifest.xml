@@ -3,7 +3,10 @@
     package="com.example.marote.marotorch">
 
     <uses-permission android:name="android.permission.CAMERA"/>
-    <uses-feature android:name="android.hardware.camera2.CameraDevice" android:required="true"> </uses-feature>
+    <uses-permission android:name="android.permission.FLASHLIGHT"/>
+
+    <uses-feature android:name="android.hardware.camera" android:required="true"> </uses-feature>
+    <uses-feature android:name="android.hardware.camera.flash" android:required="true"> </uses-feature>
 
 
     <application
