@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MaroTorch</string>
+    <string name="notification_text">Ir a MaroTorch!!</string>
 </resources>
